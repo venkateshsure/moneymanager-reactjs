@@ -1,0 +1,27 @@
+/* Write your CSS here */
+
+/* Write your CSS here */
+
+.list-transaction-item {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #cbd5e1;
+}
+
+.trans-con {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.trans-img {
+  width: 20px;
+  height: 20px;
+}
+
+.trans-but {
+  border: none;
+  background: transparent;
+}

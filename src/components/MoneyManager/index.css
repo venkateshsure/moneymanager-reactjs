@@ -1,0 +1,80 @@
+/* Write your CSS here */
+
+.money-manager {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-manager-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.money-manager-body {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  width: 90%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+}
+
+.money-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.form-con {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 2px solid #d7dfe9;
+  border-radius: 3px;
+  padding-left: 5px;
+}
+
+.text-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.but {
+  align-self: flex-start;
+  background-color: #0b69ff;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ul-con {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-money-manager {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid #cbd5e1;
+}
