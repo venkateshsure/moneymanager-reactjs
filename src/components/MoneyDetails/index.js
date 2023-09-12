@@ -6,8 +6,8 @@ const MoneyDetails = prop => {
   const {getIncomeTrans, getExpensesTrans, getBalanceTrans} = prop
   // const {amount, selectedOption} = initialList
   return (
-    <>
-      <li className="money-details-list1">
+    <div className="con">
+      <div className="money-details-list1">
         <div className="money-details-con">
           <img
             className="img"
@@ -19,9 +19,9 @@ const MoneyDetails = prop => {
             <p data-testid="balanceAmount">Rs {getBalanceTrans}</p>
           </div>
         </div>
-      </li>
+      </div>
 
-      <li className="money-details-list2">
+      <div className="money-details-list2">
         <div className="money-details-con">
           <img
             className="img"
@@ -33,9 +33,9 @@ const MoneyDetails = prop => {
             <p data-testid="incomeAmount">Rs {getIncomeTrans}</p>
           </div>
         </div>
-      </li>
+      </div>
 
-      <li className="money-details-list3">
+      <div className="money-details-list3">
         <div className="money-details-con">
           <img
             className="img"
@@ -47,8 +47,8 @@ const MoneyDetails = prop => {
             <p data-testid="expensesAmount">Rs {getExpensesTrans}</p>
           </div>
         </div>
-      </li>
-    </>
+      </div>
+    </div>
   )
 }
 

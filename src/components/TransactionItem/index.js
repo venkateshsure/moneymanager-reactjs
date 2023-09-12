@@ -4,17 +4,17 @@ import './index.css'
 
 const TransactionItem = prop => {
   const {each, deleteTransaction} = prop
-  const {title, amount, type} = each
+  const {id, title, amount, type} = each
 
   const deleteIcon = () => {
-    deleteTransaction(type)
+    deleteTransaction(id)
   }
 
   return (
     <li className="list-transaction-item">
       <div className="trans-con">
         <p>{title}</p>
-        <p>{amount}</p>
+        <p>Rs {amount}</p>
         <p>{type}</p>
       </div>
       <button

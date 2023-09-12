@@ -1,5 +1,9 @@
 /* Write your CSS here */
-
+.con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .money-details-list1 {
   background-color: #ecfccb;
   border-radius: 5px;

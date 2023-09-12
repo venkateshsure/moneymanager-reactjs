@@ -25,10 +25,7 @@ class MoneyManager extends Component {
     initialList: [],
     title: '',
     amount: '',
-    // balanceAmount: 0,
     selectedOption: transactionTypeOptions[0].optionId,
-    // income: 0,
-    // expenses: 0,
   }
 
   title = event => {
@@ -46,13 +43,11 @@ class MoneyManager extends Component {
   formSubmit = event => {
     event.preventDefault()
 
-    console.log(event.target.value)
     const {title, amount, selectedOption} = this.state
 
     const text = transactionTypeOptions.find(
       each => each.optionId === selectedOption,
     )
-    console.log(text)
     const {displayText} = text
     const newTrans = {
       id: v4(),
@@ -65,17 +60,15 @@ class MoneyManager extends Component {
       title: '',
       amount: '',
       selectedOption: transactionTypeOptions[0].optionId,
-
-      // balanceAmount: parseInt(pre.income) - parseInt(pre.expenses),
-      // income: pre.income + parseInt(incomeAmount),
-      // expenses: pre.expenses + parseInt(expensesAmount),
     }))
   }
 
   deleteTransaction = id => {
     const {initialList} = this.state
+    // console.log(initialList)
 
-    const filteredTrans = initialList.filter(each => each.type !== id)
+    const filteredTrans = initialList.filter(each => each.id !== id)
+    // console.log(filteredTrans)
 
     this.setState({initialList: filteredTrans})
   }
@@ -111,8 +104,9 @@ class MoneyManager extends Component {
   }
 
   render() {
-    const {initialList, selectedOption} = this.state
-    const {title, amount} = initialList
+    const {initialList, selectedOption, title, amount} = this.state
+    console.log(initialList)
+    console.log(title, amount)
     const getIncomeTrans = this.getIncome()
     const getExpensesTrans = this.getExpenses()
     const getBalanceTrans = this.getBalance()
@@ -125,13 +119,12 @@ class MoneyManager extends Component {
               welcome back to your <span>Money Manager</span>
             </p>
           </div>
-          <ul className="money-details">
-            <MoneyDetails
-              getIncomeTrans={getIncomeTrans}
-              getExpensesTrans={getExpensesTrans}
-              getBalanceTrans={getBalanceTrans}
-            />
-          </ul>
+          <MoneyDetails
+            getIncomeTrans={getIncomeTrans}
+            getExpensesTrans={getExpensesTrans}
+            getBalanceTrans={getBalanceTrans}
+          />
+
           <div className="body">
             <form className="form-con" onSubmit={this.formSubmit}>
               <h1>Add Transaction</h1>
@@ -173,21 +166,25 @@ class MoneyManager extends Component {
                 Add
               </button>
             </form>
-            <ul className="ul-con">
+            <div className="ul-upper-con">
               <h1>History</h1>
-              <li className="list-money-manager">
-                <p>Title</p>
-                <p>Amount</p>
-                <p>Type</p>
-              </li>
-              {initialList.map(each => (
-                <TransactionItem
-                  deleteTransaction={this.deleteTransaction}
-                  key={each.id}
-                  each={each}
-                />
-              ))}
-            </ul>
+              <div className="bg-con">
+                <ul className="ul-con">
+                  <li className="list-money-manager">
+                    <p>Title</p>
+                    <p>Amount</p>
+                    <p>Type</p>
+                  </li>
+                  {initialList.map(each => (
+                    <TransactionItem
+                      deleteTransaction={this.deleteTransaction}
+                      key={each.id}
+                      each={each}
+                    />
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

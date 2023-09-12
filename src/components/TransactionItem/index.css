@@ -3,11 +3,14 @@
 /* Write your CSS here */
 
 .list-transaction-item {
-  list-style-type: none;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 2px solid #cbd5e1;
+  justify-content: space-between;
+  list-style-type: none;
+  border-bottom: 1px solid #cbd5e1;
+  border-right: 1px solid #cbd5e1;
+  border-left: 1px solid #cbd5e1;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .trans-con {
